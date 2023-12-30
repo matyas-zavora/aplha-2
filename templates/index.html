@@ -2,26 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Alfa 2</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Alpha 2</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="./img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="./img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="./img/favicon/site.webmanifest" rel="manifest">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        .form-group input[type="text"] {
+            text-align: center;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>
+            <img alt="Logo" src="./img/favicon/android-chrome-512x512.png"
+                 style="height: 78px; vertical-align: middle;">
+            <span class="text-info">Alpha 2</span>
+        </h1>
+        <p>Alpha 2 is a simple web application that allows you to shorten desired text based on
+            <span class="text-info">T</span>he
+            <span class="text-info">M</span>ighty
+            <span class="text-info">T</span>able
+            <span class="text-info">O</span>f
+            <span class="text-info">S</span>hortages (<span class="text-info">TMTOS</span>) &#169;</p>
+    </div>
+    <button class="btn btn-primary" onclick="window.location.href='./assignment.php'">Assignment</button>
+</div>
+
+<form id="shortenForm">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Alfa 2</h1>
-            <p>Alfa 2 is a simple web application that allows you to shorten desired text based on the mighty Table of shortages &#169;</p>
+        <div class="form-group">
+            <label class="form-label" for="formFile">Import text file</label>
+            <input class="form-control" id="formFile" type="file">
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+
+            <h3 class="text-center">
+                <span class="text-info">T</span>he
+                <span class="text-info">M</span>ighty
+                <span class="text-info">T</span>able
+                <span class="text-info">O</span>f
+                <span class="text-info">S</span>hortages
+            </h3>
+
+        </div>
+        <div class="form-group">
+            <table class="table table-striped" id="dataTable">
+                <thead>
+                <tr>
+                    <th scope="col">I want this...</th>
+                    <th scope="col">To be replaced with this...</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input class="form-control" name="input1[]" oninput="addRow('dataTable')" type="text"></td>
+                    <td><input class="form-control" name="input2[]" oninput="addRow('dataTable')" type="text"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="btn-group btn-group-justified" style="width: 100%;">
+                <div class="btn-group" style="width: 50%;">
+                    <input class="btn btn-danger btn-block" id="clearBtn" onclick="clearTable()" style="display: none;"
+                           type="button"
+                           value="Clear Table">
+                </div>
+                <div class="btn-group" style="width: 50%;">
+                    <input class="btn btn-info btn-block" id="shortenBtn" style="display: none;" type="submit"
+                           value="Shorten!">
+                </div>
+            </div>
         </div>
     </div>
-    <a href="./assignment.php">Assignment</a>
-    <!-- Import of text file -->
-    <form>
-        <div class="form-control">
-            <label for="formFile" class="form-label">Import text file</label>
-            <input class="form-control" type="file" id="formFile">
-        </div>
-    </form>
+</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./scripts/index.js"></script>
 </body>
 </html>

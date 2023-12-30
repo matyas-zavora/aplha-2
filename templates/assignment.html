@@ -2,50 +2,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Alpha - 2 | Assignment</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./img/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="./img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="./img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="./img/favicon/site.webmanifest" rel="manifest">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<p>
-    α.2 Ztrátová komprese textového souboru
+<div class="container">
+    <h2>α.2 Ztrátová komprese textového souboru</h2>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <p>
+                <br><br>Vytvořte program na kompresi textového souboru s příponou .txt, který na vstupu přijme libovolný
+                textový
+                soubor s textem v přirozeném jazyce a převede ho do jiného souboru s prokazatelně menší velikostí.
 
-    <br><br>Vytvořte program na kompresi textového souboru s příponou .txt, který na vstupu přijme libovolný textový soubor s textem v přirozeném jazyce a převede ho do jiného souboru s prokazatelně menší velikostí.
+                <br><br>Můžete využít různé metody komprese, například nahrazení slov zkratkami, využití databáze
+                synonym, kde
+                nahradíte delší výraz kratším stejného významu, nebo využijte vlastností přirozeného jazyka, kdy třeba
+                spojku
+                "vždyť" lze nahradit spojkou "však", spojku "jenomže" za "jenže" apod.. Často se opakující slova, nebo
+                lépe celá
+                slovní spojení můžete také nahradit symbolem, či jiným sloven a k tomu vydat slovník v jiném odděleném
+                souboru, nebo
+                to můžete udělat přímo v textu tak, že například za první výskyt slova zapíšete jeho zkratku v závorce a
+                všechny
+                další výskyty už nahradíte jen zkratkou, například.: Školský zákon (SZ) říká, že se žáci mají učit.
+                Současný SZ
+                vznikl v roce 2004, ale před vznikem SZ. Doporučujeme nahrazovat taková slova, nebo slovní spojení,
+                která se v textu
+                opakují na základě frekvenční analýzy slov, tj. která slova se vyskytují a opakují častěji než jiná.
 
-    <br><br>Můžete využít různé metody komprese, například nahrazení slov zkratkami, využití databáze synonym, kde nahradíte delší výraz kratším stejného významu, nebo využijte vlastností přirozeného jazyka, kdy třeba spojku "vždyť" lze nahradit spojkou "však", spojku "jenomže" za "jenže" apod..  Často se opakující slova, nebo lépe celá slovní spojení můžete také nahradit symbolem, či jiným sloven a k tomu vydat slovník v jiném odděleném souboru, nebo to můžete udělat přímo v textu tak, že například za první výskyt slova zapíšete jeho zkratku v závorce a všechny další výskyty už nahradíte jen zkratkou, například.: Školský zákon (SZ) říká, že se žáci mají učit. Současný SZ vznikl v roce 2004, ale před vznikem SZ. Doporučujeme nahrazovat taková slova, nebo slovní spojení, která se v textu opakují na základě frekvenční analýzy slov, tj. která slova se vyskytují a opakují častěji než jiná.
+                <br><br>Po kompresi textu vždy musíte dodržet hlavní pravidlo, ž musíte zachovat význam textu a celý
+                text musí být
+                stále dobře čitelný. Platí ale i další pravidla:
 
-    <br><br>Po kompresi textu vždy musíte dodržet hlavní pravidlo, ž musíte zachovat význam textu a celý text musí být stále dobře čitelný. Platí ale i další pravidla:
+                <br>Vstupem programu je jeden textový soubor.
+                <br>Výstupem programu je jeden nebo více souborů.
+                <br>Text po všech úpravách musí být čitelný člověkem a jeho význam musí být zachován i po změně nebo
+                odstranění a
+                nahrazení slov. Tedy text se může změnit, například odstraněním nepotřebných slov a nic neříkajících
+                vět, ale nesmí
+                to ovlivnit to, co je v textu zásadní.
+                <br>Program musí být konfigurovatelný například, jaky soubor míá načítat kam má uložit výsledek a jak ho
+                má
+                pojmenovat.
+                <br>Program musí informaci o každé úpravě textu vytvořit záznam v logu, kde bude informace o tom v jaké
+                konfiguraci
+                se program nacházel a co kdy zpracoval a zda-li a jak dobře se povedlo komprimovat nebo dekomprimovat,
+                nebo zda-li
+                nastala chyba.
+                <br>Program musí umět vypsat informace o svých operacích z logu a musí je umožnit filtrovat podle
+                zadaného času
+                dalších parametrů, které zvolíte.
+                <br>Program musí umět poskytnout uživateli nápovědu o tom jak se používá.
+                <br>Program nesmí používat žádnou externí knihovnu pro komprese nebo dekomprese.
+                <br>Program se musí umět vypořádat s chybami typu, že soubor nelze číst kvůli oprávnění, že soubor není
+                textový
+                apod. O každé chybě musí být záznam v logu a také se musí uživateli zobrazit vhodná chybová hláška.
+                <br>Program musí obsahovat unit testy s ukázkami jednotlivých funkcí.
+                <br>Program musí být rozdělen do více souborů a složek pro jednotlivé části. Logy by měly být ve složce
+                /log,
+                konfigurace ve složce /config, data a soubory ve složce /data, zdrojový kód pak musí být rozdělen do
+                dalších
+                package/modulů ve složce /src (uživatelské rozhraní zvlášť, algoritmy pro kompresi zvlášť, práce s logem
+                zvlášť).
+                Dokumentace ve složce /doc a unit testy ve složce /test. Pokud použijete cizí zdrojový kód musí byt také
+                ve zvláštní
+                složce, například /lib nebo /vendor.
+                <br>Program může kromě komprimovaného souboru generovat i pomocné soubory, například s kódovací
+                tabulkou, seznam
+                zkratek apod.
 
-    <br>Vstupem programu je jeden textový soubor.
-    <br>Výstupem programu je jeden nebo více souborů.
-    <br>Text po všech úpravách musí být čitelný člověkem a jeho význam musí být zachován i po změně nebo odstranění a nahrazení slov. Tedy text se může změnit, například odstraněním nepotřebných slov a nic neříkajících vět, ale nesmí to ovlivnit to, co je v textu zásadní.
-    <br>Program musí být konfigurovatelný například, jaky soubor míá načítat kam má uložit výsledek a jak ho má pojmenovat.
-    <br>Program musí informaci o každé úpravě textu vytvořit záznam v logu, kde bude informace o tom v jaké konfiguraci se program nacházel a co kdy zpracoval a zda-li a jak dobře se povedlo komprimovat nebo dekomprimovat, nebo zda-li nastala chyba.
-    <br>Program musí umět vypsat informace o svých operacích z logu a musí je umožnit filtrovat podle zadaného času dalších parametrů, které zvolíte.
-    <br>Program musí umět poskytnout uživateli nápovědu o tom jak se používá.
-    <br>Program nesmí používat žádnou externí knihovnu pro komprese nebo dekomprese.
-    <br>Program se musí umět vypořádat s chybami typu, že soubor nelze číst kvůli oprávnění, že soubor není textový apod. O každé chybě musí být záznam v logu a také se musí uživateli zobrazit vhodná chybová hláška.
-    <br>Program musí obsahovat unit testy s ukázkami jednotlivých funkcí.
-    <br>Program musí být rozdělen do více souborů a složek pro jednotlivé části. Logy by měly být ve složce /log, konfigurace ve složce /config, data a soubory ve složce /data, zdrojový kód pak musí být rozdělen do dalších package/modulů ve složce /src (uživatelské rozhraní zvlášť, algoritmy pro kompresi zvlášť, práce s logem zvlášť). Dokumentace ve složce /doc a unit testy ve složce /test. Pokud použijete cizí zdrojový kód musí byt také ve zvláštní složce, například /lib nebo /vendor.
-    <br>Program může kromě komprimovaného souboru generovat i pomocné soubory, například s kódovací tabulkou, seznam zkratek apod.
-
-    <br>Doporučujeme také využít OOP a návrhových vzorů a znalostí z kapitol 1 až 13 a dávat pozor především na všechny možné chybové stavy.
+                <br>Doporučujeme také využít OOP a návrhových vzorů a znalostí z kapitol 1 až 13 a dávat pozor především
+                na všechny
+                možné chybové stavy.
 
 
-    <br><br>Kritéria hodnocení:
+                <br><br>Kritéria hodnocení:
 
-    <br><br>Program musí splňovat výše uvedená kritéria.
-    <br>Program musí mít celé UI a nápovědu ve stejném jazyce, ve kterém umí komprimovat text a musí být jasné, o jaký jazyk jde. Povolené jsou pouze jazyky,  které jsou v naší škole vyučovány.
-    <br>Program musí být spustitelný bez vývojového prostředí (tj.nebude spouštěn v PyCharm ani VStudio) na školním PC. Nelze tedy použít technologie a knihovny, které nelze ve škole instalovat/nasadit.
+                <br><br>Program musí splňovat výše uvedená kritéria.
+                <br>Program musí mít celé UI a nápovědu ve stejném jazyce, ve kterém umí komprimovat text a musí být
+                jasné, o jaký
+                jazyk jde. Povolené jsou pouze jazyky, které jsou v naší škole vyučovány.
+                <br>Program musí být spustitelný bez vývojového prostředí (tj.nebude spouštěn v PyCharm ani VStudio) na
+                školním PC.
+                Nelze tedy použít technologie a knihovny, které nelze ve škole instalovat/nasadit.
 
-    <br><br>Při splnění všech výše uvedených pravidel bude práce hodnocena na stupnici 1 az 5 podle kriterii kvality, pri nesplnění jediného z nich , nebo podvodu bude hodnocena znamkou 5, bez vyhodnoceni kritérií kvality.
+                <br><br>Při splnění všech výše uvedených pravidel bude práce hodnocena na stupnici 1 az 5 podle kriterii
+                kvality,
+                pri nesplnění jediného z nich , nebo podvodu bude hodnocena znamkou 5, bez vyhodnoceni kritérií kvality.
 
 
-    <br><br><br>Rozšíření pro pokročilé:
-    <br>V této úloze můžete také využít nějaké kódování symbolů/znaků nebo celých slovních spojení do binární podoby, ale k tomu pak musíte vytvořit program, který umí takový soubor načíst a zobrazit tak, aby byl čitelný pro člověka. Pokud tuto cestu zvolíte, tak z důvodu návaznosti na jiné úlohy zde explicitně zakazujeme jakékoliv použití Huffmanova kódování. To v této úloze použít nesmíte a to ani, když ho implementujete vlastním způsobem.
+                <br><br><br>Rozšíření pro pokročilé:
+                <br>V této úloze můžete také využít nějaké kódování symbolů/znaků nebo celých slovních spojení do
+                binární podoby,
+                ale k tomu pak musíte vytvořit program, který umí takový soubor načíst a zobrazit tak, aby byl čitelný
+                pro člověka.
+                Pokud tuto cestu zvolíte, tak z důvodu návaznosti na jiné úlohy zde explicitně zakazujeme jakékoliv
+                použití
+                Huffmanova kódování. To v této úloze použít nesmíte a to ani, když ho implementujete vlastním způsobem.
 
 
-
-    <br><br><br><br><br>Naposledy změněno: Pátek, 22. prosince 2023, 11.08
-</p>
-<a href="./">Back</a>
+                <br><br><br><br><br>Naposledy změněno: Pátek, 22. prosince 2023, 11.08
+            </p>
+        </div>
+    </div>
+    <div class="row btn-container">
+        <div class="col-md-2 col-md-offset-5">
+            <a class="btn btn-primary" href="./">Back</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
