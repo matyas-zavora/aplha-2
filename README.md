@@ -53,7 +53,7 @@ This will give the web server full access to the folder.
 3. Select a text file
 4. Fill out The mighty table of shortages
 5. (Optional) Change the name of the output file
-6. Click on the `Submit` button
+6. Click on the `Shorten!` button
 7. Wait for the website to process the file
 8. Select a location to save the processed file
 9. Click on the `Save` button
