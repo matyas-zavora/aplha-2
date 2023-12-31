@@ -30,10 +30,11 @@ This project was made by [Matyas Zavora](https://www.linkedin.com/in/matyas-zavo
 
 1.Open <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80">
 or any other web server
+
 2. Clone this repository into the `htdocs` folder
    of <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80">
-3.Start <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80"> (
-Apache should be enough) (default port is 80)
+   3.Start <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80"> (
+   Apache should be enough) (default port is 80)
 4. Open `localhost[:port]/alpha2` in your browser
 
 #### Linux
@@ -86,7 +87,7 @@ L i d s a.
 
 ### Meta
 
-- [ ] Write `README.md`
+- [X] Write `README.md`
 - [ ] Turn assignment in on Moodle in time
 - [ ] Make sure everything works
 - [ ] Make sure everything is commented
@@ -94,12 +95,12 @@ L i d s a.
 
 ### Frontend
 
-- [ ] Change assignment button placement
-- [ ] Make file input accept only text files
-- [ ] Change style of file input
-- [ ] Make submit button appear only when file is uploaded
-- [ ] Change button style (add more space in between)
-- [ ] Implement text input for name of output file
+- [X] Change assignment button placement
+- [X] Make file input accept only text files
+- [X] Change style of file input
+- [X] Make submit button appear only when file is uploaded
+- [X] Change button style (add more space in between)
+- [X] Implement text input for name of output file
 
 ### Backend
 

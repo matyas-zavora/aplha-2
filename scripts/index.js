@@ -28,7 +28,6 @@ function clearTable() {
             table.deleteRow(1);
         }
 
-        // Clear all input fields in the remaining row
         var inputs = table.getElementsByTagName('input');
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].value = '';
@@ -37,3 +36,87 @@ function clearTable() {
         document.getElementById('shortenBtn').style.display = 'none';
     }
 }
+
+function isTableFilled() {
+    var table = document.getElementById('dataTable');
+    var rows = table.getElementsByTagName('tr');
+    // Start at index 1 to skip the header row
+    for (var i = 1; i < rows.length; i++) {
+        var inputs = rows[i].getElementsByTagName('input');
+        var input1 = inputs[0].value.trim();
+        var input2 = inputs[1].value.trim();
+        if (input1 !== '' && input2 !== '') {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isFileUploaded() {
+    var fileInput = document.getElementById('formFile');
+    return fileInput.files.length > 0;
+}
+
+function toggleShortenButton() {
+    if (isTableFilled() && isFileUploaded()) {
+        buttonGroup.innerHTML =
+            "<div aria-label=\"Button group with spacing\" class=\"btn-group me-2\" role=\"group\">" +
+            "   <div class=\"btn-group\" style=\"width: 50%;\">" +
+            "       <input class=\"btn btn-danger btn-block\" id=\"clearBtn\" onclick=\"clearTable()\" type=\"button\" value=\"Clear Table\">" +
+            "   </div>" +
+            "   <div class=\"btn-group me-2\" role=\"group\"></div>" +
+            "   <div class=\"btn-group\" style=\"width: 50%;\">" +
+            "       <input class=\"btn btn-info btn-block\" id=\"shortenBtn\" type=\"submit\" value=\"Shorten!\">" +
+            "   </div>" +
+            "</div>"
+        ;
+    }
+}
+
+document.getElementById('formFile').addEventListener('change', toggleShortenButton);
+document.getElementById('dataTable').addEventListener('input', toggleShortenButton);
+
+const buttonGroup = document.getElementById('buttonGroup');
+const fileInput = document.getElementById('formFile');
+const fileErrorAlert = document.getElementById('fileError');
+const fileSuccessAlert = document.getElementById('fileSuccess');
+
+fileInput.addEventListener('change', function () {
+    const file = fileInput.files[0];
+    if (file) {
+        const fileName = file.name;
+        const extension = fileName.split('.').pop();
+        if (extension !== 'txt') {
+            fileErrorAlert.style.display = 'block';
+            fileInput.value = '';
+
+            if (isTableFilled()) {
+                buttonGroup.innerHTML =
+                    "<div aria-label=\"Button group with spacing\" class=\"btn-group me-2\" role=\"group\">" +
+                    "   <div class=\"btn-group\" style=\"width: 100%;\">" +
+                    "       <input class=\"btn btn-danger btn-block\" id=\"clearBtn\" onclick=\"clearTable()\" type=\"button\" value=\"Clear Table\">" +
+                    "   </div>" +
+                    "</div>"
+                ;
+            } else {
+                buttonGroup.innerHTML = '';
+            }
+
+            setTimeout(function () {
+                fileErrorAlert.style.display = 'none';
+            }, 2000);
+        } else {
+            fileErrorAlert.style.display = 'none';
+            fileSuccessAlert.style.display = 'block';
+            document.getElementById('fileName').innerText = fileName;
+
+            setTimeout(function () {
+                fileSuccessAlert.style.display = 'none';
+            }, 2000);
+
+            toggleShortenButton();
+        }
+    }
+});
+
+

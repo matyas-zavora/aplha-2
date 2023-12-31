@@ -8,26 +8,9 @@
     <link href="./img/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="./img/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
     <link href="./img/favicon/site.webmanifest" rel="manifest">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        .btn-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="./styles/reset.css" rel="stylesheet">
+    <link href="./styles/assignment.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -59,31 +42,35 @@
                 text musí být
                 stále dobře čitelný. Platí ale i další pravidla:
 
-                <br>Vstupem programu je jeden textový soubor.
-                <br>Výstupem programu je jeden nebo více souborů.
-                <br>Text po všech úpravách musí být čitelný člověkem a jeho význam musí být zachován i po změně nebo
+                <br><br>Vstupem programu je jeden textový soubor.
+                <br><br>Výstupem programu je jeden nebo více souborů.
+                <br><br>Text po všech úpravách musí být čitelný člověkem a jeho význam musí být zachován i po změně nebo
                 odstranění a
                 nahrazení slov. Tedy text se může změnit, například odstraněním nepotřebných slov a nic neříkajících
                 vět, ale nesmí
                 to ovlivnit to, co je v textu zásadní.
-                <br>Program musí být konfigurovatelný například, jaky soubor míá načítat kam má uložit výsledek a jak ho
+                <br><br>Program musí být konfigurovatelný například, jaky soubor míá načítat kam má uložit výsledek a
+                jak ho
                 má
                 pojmenovat.
-                <br>Program musí informaci o každé úpravě textu vytvořit záznam v logu, kde bude informace o tom v jaké
+                <br><br>Program musí informaci o každé úpravě textu vytvořit záznam v logu, kde bude informace o tom v
+                jaké
                 konfiguraci
                 se program nacházel a co kdy zpracoval a zda-li a jak dobře se povedlo komprimovat nebo dekomprimovat,
                 nebo zda-li
                 nastala chyba.
-                <br>Program musí umět vypsat informace o svých operacích z logu a musí je umožnit filtrovat podle
+                <br><br>Program musí umět vypsat informace o svých operacích z logu a musí je umožnit filtrovat podle
                 zadaného času
                 dalších parametrů, které zvolíte.
-                <br>Program musí umět poskytnout uživateli nápovědu o tom jak se používá.
-                <br>Program nesmí používat žádnou externí knihovnu pro komprese nebo dekomprese.
-                <br>Program se musí umět vypořádat s chybami typu, že soubor nelze číst kvůli oprávnění, že soubor není
+                <br><br>Program musí umět poskytnout uživateli nápovědu o tom jak se používá.
+                <br> <br>Program nesmí používat žádnou externí knihovnu pro komprese nebo dekomprese.
+                <br><br>Program se musí umět vypořádat s chybami typu, že soubor nelze číst kvůli oprávnění, že soubor
+                není
                 textový
                 apod. O každé chybě musí být záznam v logu a také se musí uživateli zobrazit vhodná chybová hláška.
-                <br>Program musí obsahovat unit testy s ukázkami jednotlivých funkcí.
-                <br>Program musí být rozdělen do více souborů a složek pro jednotlivé části. Logy by měly být ve složce
+                <br><br>Program musí obsahovat unit testy s ukázkami jednotlivých funkcí.
+                <br><br>Program musí být rozdělen do více souborů a složek pro jednotlivé části. Logy by měly být ve
+                složce
                 /log,
                 konfigurace ve složce /config, data a soubory ve složce /data, zdrojový kód pak musí být rozdělen do
                 dalších
@@ -92,22 +79,24 @@
                 Dokumentace ve složce /doc a unit testy ve složce /test. Pokud použijete cizí zdrojový kód musí byt také
                 ve zvláštní
                 složce, například /lib nebo /vendor.
-                <br>Program může kromě komprimovaného souboru generovat i pomocné soubory, například s kódovací
+                <br><br>Program může kromě komprimovaného souboru generovat i pomocné soubory, například s kódovací
                 tabulkou, seznam
                 zkratek apod.
 
-                <br>Doporučujeme také využít OOP a návrhových vzorů a znalostí z kapitol 1 až 13 a dávat pozor především
+                <br><br><br>Doporučujeme také využít OOP a návrhových vzorů a znalostí z kapitol 1 až 13 a dávat pozor
+                především
                 na všechny
                 možné chybové stavy.
 
 
                 <br><br>Kritéria hodnocení:
 
-                <br><br>Program musí splňovat výše uvedená kritéria.
-                <br>Program musí mít celé UI a nápovědu ve stejném jazyce, ve kterém umí komprimovat text a musí být
+                <br>Program musí splňovat výše uvedená kritéria.
+                <br><br>Program musí mít celé UI a nápovědu ve stejném jazyce, ve kterém umí komprimovat text a musí být
                 jasné, o jaký
                 jazyk jde. Povolené jsou pouze jazyky, které jsou v naší škole vyučovány.
-                <br>Program musí být spustitelný bez vývojového prostředí (tj.nebude spouštěn v PyCharm ani VStudio) na
+                <br><br>Program musí být spustitelný bez vývojového prostředí (tj.nebude spouštěn v PyCharm ani VStudio)
+                na
                 školním PC.
                 Nelze tedy použít technologie a knihovny, které nelze ve škole instalovat/nasadit.
 
