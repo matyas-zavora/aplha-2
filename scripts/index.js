@@ -53,7 +53,7 @@ function isTableFilled() {
 }
 
 function isFileUploaded() {
-    var fileInput = document.getElementById('formFile');
+    var fileInput = document.getElementById('fileImport');
     return fileInput.files.length > 0;
 }
 
@@ -73,11 +73,11 @@ function toggleShortenButton() {
     }
 }
 
-document.getElementById('formFile').addEventListener('change', toggleShortenButton);
+document.getElementById('fileImport').addEventListener('change', toggleShortenButton);
 document.getElementById('dataTable').addEventListener('input', toggleShortenButton);
 
 const buttonGroup = document.getElementById('buttonGroup');
-const fileInput = document.getElementById('formFile');
+const fileInput = document.getElementById('fileImport');
 const fileErrorAlert = document.getElementById('fileError');
 const fileSuccessAlert = document.getElementById('fileSuccess');
 
