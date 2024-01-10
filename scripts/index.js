@@ -21,7 +21,7 @@ function addRow(tableID) {
 }
 
 function clearTable() {
-    var confirmation = confirm("Are you sure you want to clear the table?");
+    var confirmation = confirm("Are you sure you want to clear the tables?");
     if (confirmation) {
         var table = document.getElementById('dataTable');
         while (table.rows.length > 2) {
@@ -119,4 +119,11 @@ fileInput.addEventListener('change', function () {
     }
 });
 
-
+function downloadFileFromServer(fileName) {
+    const link = document.createElement('a');
+    link.href = 'download.php?file=' + fileName;
+    link.download = fileName + '.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}

@@ -34,19 +34,21 @@
     <div class="alert alert-success" id="fileSuccess" role="alert" style="display: none;">
         <span id="fileName"></span> has been successfully uploaded.
     </div>
+    <div class="alert alert-danger" id="phpError" role="alert" style="display: none;"></div>
+    <div class="alert alert-success" id="phpSuccess" role="alert" style="display: none;"></div>
+    <div class="alert alert-info" id="phpInfo" role="alert" style="display: none;"></div>
 
 </div>
-;
-<form id="shortenForm" action="./upload.php" method="post" enctype="multipart/form-data">
+<form id="shortenForm" method="post" enctype="multipart/form-data">
     <div class="container">
         <div class="form-group">
-            <label class="form-label" for="formFile">Upload a .txt file</label>
-            <input class="form-control form-control-lg" id="fileImport" type="file">
+            <label class="form-label" for="fileImport">Upload a .txt file</label>
+            <input class="form-control form-control-lg" id="fileImport" name="fileImport" type="file">
         </div>
 
         <div class="form-group">
             <label for="outputFileName">Output File Name</label>
-            <input class="form-control" id="outputFileName" placeholder="Enter output file name" type="text">
+            <input class="form-control" id="outputFileName" name="outputFileName" placeholder="Enter output file name" type="text">
         </div>
 
         <div class="divider"></div>
