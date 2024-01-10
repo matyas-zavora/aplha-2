@@ -39,7 +39,7 @@
     <div class="alert alert-info" id="phpInfo" role="alert" style="display: none;"></div>
 
 </div>
-<form id="shortenForm" method="post" enctype="multipart/form-data">
+<form enctype="multipart/form-data" id="shortenForm" method="post">
     <div class="container">
         <div class="form-group">
             <label class="form-label" for="fileImport">Upload a .txt file</label>
@@ -48,7 +48,8 @@
 
         <div class="form-group">
             <label for="outputFileName">Output File Name</label>
-            <input class="form-control" id="outputFileName" name="outputFileName" placeholder="Enter output file name" type="text">
+            <input class="form-control" id="outputFileName" name="outputFileName" placeholder="Enter output file name"
+                   type="text">
         </div>
 
         <div class="divider"></div>
@@ -89,6 +90,8 @@
 </form>
 <div class="container">
     <button class="btn btn-primary" onclick="window.location.href='./assignment.php'">Assignment</button>
+    <a class="btn btn-primary" download href="./log.txt">Download Log</a>
+    <a class="btn btn-primary" href="https://github.com/matyas-zavora/aplha-2" target="_blank">Github</a>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

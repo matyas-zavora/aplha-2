@@ -3,7 +3,8 @@
 ## Description
 
 This is the second alpha project.
-It is a website that allows the user to upload a text file and then shorten it.
+It is a website that allows the user to upload a text file and then shorten it (or make it longer) based on user's
+criteria.
 The processing is done by a backend written
 in <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" width="40">.
 The website is written
@@ -12,6 +13,8 @@ in <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Bad
 and <img src="https://iconape.com/wp-content/png_logo_vector/javascript-logo.png" width="18">.
 
 This project was made by [Matyas Zavora](https://www.linkedin.com/in/matyas-zavora/)
+
+#### Grade(s): TBA
 
 ### Prerequisites
 
@@ -114,7 +117,7 @@ L i d s a.
 - [X] Make text input work (name of output file)
 - [X] Output processed file (website starts downloading it)
     - [ ] Make processing case-insensitive
-    - [ ] Fix file deletion from server
+    - [X] Fix file deletion from server
 - [ ] Add unit tests
 - [ ] Add "show logs" button
     - Routes to a page that shows logs 
