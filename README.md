@@ -23,7 +23,9 @@ This project was made by [Matyas Zavora](https://www.linkedin.com/in/matyas-zavo
 - A text file to shorten
 - (Optional) Access to the internet (
   for <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" width="24">)
-  - Note: website is fully functional without <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" width="24">, but it's won't look as good as it is supposed to. 
+    - Note: website is fully functional
+      without <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" width="24">,
+      but it's won't look as good as it is supposed to.
 
 ## Installation
 
@@ -34,10 +36,10 @@ or any other web server
 
 2. Clone this repository into the `htdocs` folder
    of <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80">
-   
+
 3.Start <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80"> (
-   Apache should be enough) (default port is 80)
-   
+Apache should be enough) (default port is 80)
+
 4. Open `localhost[:port]/alpha2` in your browser
 
 #### Linux
@@ -107,7 +109,12 @@ L i d s a.
 
 ### Backend
 
-- [ ] Make submit button work
-- [ ] Make file input work
-- [ ] Make text input work (name of output file)
-- [ ] Output processed file (website starts downloading it)
+- [X] Make submit button work
+- [X] Make file input work
+- [X] Make text input work (name of output file)
+- [X] Output processed file (website starts downloading it)
+    - [ ] Make processing case-insensitive
+    - [ ] Fix file deletion from server
+- [ ] Add unit tests
+- [ ] Add "show logs" button
+    - Routes to a page that shows logs 
