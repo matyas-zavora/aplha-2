@@ -12,7 +12,12 @@ in <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Bad
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/1024px-CSS3_logo.svg.png" width="20">
 and <img src="https://iconape.com/wp-content/png_logo_vector/javascript-logo.png" width="18">.
 
-This project was made by [Matyas Zavora](https://www.linkedin.com/in/matyas-zavora/)
+###### <a href="https://youtu.be/WSIvP9uCOAw?si=NxzMHvnKdOQCV5Ui" style="a {color: inherit;text-decoration: none; cursor: default;}">Hey, listen!</a> The shortening is also case-insensitive.
+
+<br>
+
+This project was made by [Matyáš Závora](https://www.linkedin.com/in/matyas-zavora/) (me)
+<br><a href="https://www.linkedin.com/in/matyas-zavora/"><img src="https://avatars.githubusercontent.com/u/105340917?v=4" width=10%></a>
 
 #### Grade(s): TBA
 
@@ -34,13 +39,16 @@ This project was made by [Matyas Zavora](https://www.linkedin.com/in/matyas-zavo
 
 #### Windows
 
-1.Open <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80">
+1.
+
+Open <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80">
 or any other web server
 
 2. Clone this repository into the `htdocs` folder
    of <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80">
+3.
 
-3.Start <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80"> (
+Start <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xampp_logo.svg/2560px-Xampp_logo.svg.png" width="80"> (
 Apache should be enough) (default port is 80)
 
 4. Open `localhost[:port]/alpha2` in your browser
@@ -96,10 +104,9 @@ L i d s a.
 ### Meta
 
 - [X] Write `README.md`
-- [ ] Turn assignment in on Moodle in time
-- [ ] Make sure everything works
-- [ ] Make sure everything is commented
-- [ ] Make sure everything is documented
+- [X] Turn assignment in on Moodle in time
+- [X] Make sure everything works
+- [X] Make sure everything is documented
 
 ### Frontend
 
@@ -116,8 +123,8 @@ L i d s a.
 - [X] Make file input work
 - [X] Make text input work (name of output file)
 - [X] Output processed file (website starts downloading it)
-    - [ ] Make processing case-insensitive
+    - [X] Make processing case-insensitive
     - [X] Fix file deletion from server
-- [ ] Add unit tests
-- [ ] Add "show logs" button
+- [X] Add unit tests
+- [X] Add "show logs" button
     - Routes to a page that shows logs 

@@ -1,29 +1,50 @@
 <?php
+/**
+ * Reads the contents of a file.
+ *
+ * @param string $targetFile The target file name.
+ * @param string $uploadDir The directory where the file is located.
+ * @return string The contents of the file.
+ */
 function readFileContents(string $targetFile, string $uploadDir)
 {
-    $file = fopen($uploadDir . $targetFile . ".txt", 'r');
-    $fileContent = fread($file, filesize($uploadDir . $targetFile . ".txt"));
+    $file = fopen($uploadDir . $targetFile, 'r');
+    $fileContent = fread($file, filesize($uploadDir . $targetFile));
     fclose($file);
     return $fileContent;
 }
 
+/**
+ * Shortens the contents of a file based on replacement arrays.
+ *
+ * @param string $targetFile The target file name.
+ * @param string $uploadDir The directory where the file is located.
+ * @param array $input1 The array of strings to be replaced.
+ * @param array $input2 The array of replacement strings.
+ */
 function shortenFile(string $targetFile, string $uploadDir, array $input1, array $input2)
 {
     if (!empty($input1) && !empty($input2) && count($input1) === count($input2)) {
         $fileContent = readFileContents($targetFile, $uploadDir);
 
-        $replacementArray = array_filter(array_combine($input1, $input2), function ($value) {
-            return $value !== '';
-        });
+        foreach ($input1 as $index => $search) {
+            if (stripos($fileContent, $search) !== false) {
+                $fileContent = preg_replace("/\b" . preg_quote($search, '/') . "\b/i", $input2[$index], $fileContent);
+            }
+        }
 
-        $newData = strtr($fileContent, $replacementArray);
-
-        $file = fopen($uploadDir . $targetFile . ".txt", 'w');
-        fwrite($file, $newData);
+        $file = fopen($uploadDir . $targetFile, 'w');
+        fwrite($file, $fileContent);
         fclose($file);
     }
 }
 
+
+/**
+ * Logs a message to a log file.
+ *
+ * @param string $message The message to be logged.
+ */
 function _log(string $message)
 {
     $date = getdate()['mday'] . "/" . getdate()['mon'] . "/" . getdate()['year'] . " " . getdate()['hours'] . ":" . getdate()['minutes'] . ":" . getdate()['seconds'] . " - ";
@@ -33,6 +54,12 @@ function _log(string $message)
     fclose($logFile);
 }
 
+/**
+ * Displays a message on the client side and logs it.
+ *
+ * @param string $message The message to be displayed.
+ * @param string $alertType The type of the message (error, info, success).
+ */
 function writeMessage(string $message, string $alertType)
 {
     echo '<script>
@@ -61,17 +88,30 @@ function writeMessage(string $message, string $alertType)
     echo '</script>';
 }
 
+/**
+ * Processes a file by shortening it, initiating download, and logging the deletion.
+ *
+ * @param string $targetFile The target file name.
+ * @param string $uploadDir The directory where the file is located.
+ * @param array $input1 The array of strings to be replaced.
+ * @param array $input2 The array of replacement strings.
+ */
 function processFile(string $targetFile, string $uploadDir, array $input1, array $input2)
 {
-    $fileName = $targetFile . ".txt";
     shortenFile($targetFile, $uploadDir, $input1, $input2);
     downloadFile($targetFile, $uploadDir);
-    _log("info - File " . $fileName . " has been deleted.");
+    _log("info - File " . $targetFile . " has been deleted.");
 }
 
+/**
+ * Initiates download of a file, and deletes it afterwards.
+ *
+ * @param string $targetFile The target file name.
+ * @param string $uploadDir The directory where the file is located.
+ */
 function downloadFile(string $targetFile, string $uploadDir)
 {
-    $file = $uploadDir . $targetFile . ".txt";
+    $file = $uploadDir . $targetFile;
 
     if (file_exists($file)) {
         header('Content-Description: File Transfer');
@@ -84,7 +124,9 @@ function downloadFile(string $targetFile, string $uploadDir)
         readfile($file);
 
         unlink($file);
-        _log("info - File " . $targetFile . ".txt has been deleted.");
+        _log("info - File " . $targetFile . " has been deleted.");
         exit;
     }
 }
+
+?>
