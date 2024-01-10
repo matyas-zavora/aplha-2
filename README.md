@@ -25,7 +25,7 @@ This project was made by [Matyas Zavora](https://www.linkedin.com/in/matyas-zavo
   for <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" width="24">)
     - Note: website is fully functional
       without <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" width="24">,
-      but it's won't look as good as it is supposed to.
+      but it won't look as good as it is supposed to.
 
 ## Installation
 
