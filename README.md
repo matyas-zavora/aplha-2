@@ -19,7 +19,16 @@ and <img src="https://iconape.com/wp-content/png_logo_vector/javascript-logo.png
 This project was made by [Matyáš Závora](https://www.linkedin.com/in/matyas-zavora/) (me)
 <br><a href="https://www.linkedin.com/in/matyas-zavora/"><img src="https://avatars.githubusercontent.com/u/105340917?v=4" width=10%></a>
 
-#### Grade(s): TBA
+#### Grade(s):
+|           Percent score            |   70%    |
+|:----------------------------------:|:--------:|
+|            Czech grade             |  __2__   |
+|  Configurability and universality  | __85%__  |
+|  Architecture and design patterns  | __40%__  |
+|   Usability and program control    | __63%__  |
+|     Correctness and efficiency     | __83%__  |
+|     Testing and error handling     | __66%__  |
+| Documentation and code readability | __100%__ |
 
 ### Prerequisites
 
